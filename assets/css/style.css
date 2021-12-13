@@ -22,3 +22,10 @@
     /* Support for IE. */
     font-feature-settings: 'liga';
 }
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
