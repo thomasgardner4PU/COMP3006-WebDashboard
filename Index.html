@@ -14,17 +14,48 @@
 <div class="dashboard"><!-- Dashboard -->
     <section class="navigation"><!-- Navigation -->
         <img src="assets/img/logo-thumbnail.png" alt="COMP3006 Logo">
-
         <div>
-            <span class="material-icons"> dashboard_customize </span>
-            <span class="material-icons">trending_up</span>
-            <span class="material-icons">people_alt</span>
-            <span class="material-icons">insert_invitation</span>
-            <span class="material-icons">settings</span>
+            <span class="material-icons"> dashboard_customize
+            </span>
+            <span class="material-icons">trending_up
+            </span>
+            <span class="material-icons">people_alt
+            </span>
+            <span class="material-icons">insert_invitation
+            </span>
+            <span class="material-icons">settings
+            </span>
         </div>
     </section><!-- Navigation End-->
 
     <section class="main"><!-- Main -->
+        
+        <div class="search"><!-- Search -->
+            <form action="">
+                <input type="text" name="search" id="search" placeholder="Search Here">
+                <span class="material-icons">
+                    search</span>
+            </form>
+            <div class="notification">
+                <span class="material-icons">
+                    notifications</span>
+                <span class="material-icons">
+                    edit</span>
+            </div>
+        </div><!-- Search End-->
+
+        <div class="title">
+            <h1>My project</h1>
+            <form action="#">
+                <label for="projects">Sort By</label>
+                <select name="projects" id="projects">
+                    <option value="recent">Recent</option>
+                    <option value="finished">Finished Projects</option>
+                    <option value="ongoing">Ongoing Projects</option>
+                    <option value="stalled">Stalled Projects</option>
+                </select>
+            </form>
+        </div>
 
     </section><!-- Main End-->
 
