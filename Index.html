@@ -8,6 +8,8 @@
     <title>Project Management Dashboard</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
 </head>
 <body>
 
@@ -176,9 +178,36 @@ n
 
     <section class="secondary"><!-- Secondary -->
 
+        <div class="chart">
+            <h2>Total Project</h2>
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+
     </section><!-- Secondary end-->
 
 </div> <!-- Dashboard End-->
-
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Completed',
+                'Ongoing',
+                'Stalled'
+            ],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [300, 50, 100],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }]
+        },
+    });
+</script>
 </body>
 </html>
