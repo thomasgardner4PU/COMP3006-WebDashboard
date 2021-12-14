@@ -15,7 +15,7 @@ app.get('/profile', function (req, res){
     res.render('profile');
 })
 
-app.get('/users', function (req, res) {
+app.get('/api/users', function (req, res) {
     res.send([
         {
             id: 1,
@@ -36,6 +36,20 @@ app.get('/users', function (req, res) {
             name: "Jacub",
             age: 22,
             email: "jacubemail@test.com"
+        }
+    ])
+})
+
+app.get('/api/projects', function (req, res){
+    res.send([
+        {
+            projectId: 1,
+            projectTitle: "COMP3005",
+            projectDescription: "hello world, I am a computer communicating with a human",
+            projectActivities: [
+                "Coming Soon",
+                "Book Cover"
+            ],
         }
     ])
 })

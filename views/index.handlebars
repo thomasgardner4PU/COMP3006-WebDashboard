@@ -17,6 +17,70 @@
 
     <section class="main"><!-- Main -->
 
+        <button id="testButton" onclick="retrieveProjects()">Press me&excl;</button>
+        <script>
+
+            function retrieveProjects() {
+
+                let recievedProjects = false;
+
+                fetch("http://127.0.0.1:8000/api/projects").then(function (headers) {
+                    console.log(headers);
+                    if (headers.status != 200){
+                        console.log("did not receive 200 response");
+                        return
+                    }
+
+                    recievedProjects = true;
+                    return headers.json()
+                }).then(function (json){
+                    if (recievedProjects == false) return
+                    populateProjects(json);
+                }).catch(function (error){
+                    if (recievedProjects == false) return
+                    console.log("error");
+                    console.log(error);
+                })
+
+            }
+
+            function populateProjects(projects){
+
+                console.log(projects)
+
+                let projectListDiv = document.getElementsByClassName("project_list")[0];
+                projects.forEach(function (project){
+                    console.log(project)
+
+                    let projectDiv = document.createElement("div");
+                    let categoryDiv = document.createElement("div");
+                    let projectTitle = document.createElement("h2");
+                    let descriptionPara = document.createElement("p");
+                    let activityUL = document.createElement("ul");
+
+                    projectDiv.classList.add("project");
+                    categoryDiv.classList.add("category");
+                    activityUL.classList.add("activity");
+
+                    projectTitle.innerText = project.projectTitle;
+                    descriptionPara.innerText = project.projectDescription;
+
+                    project.projectActivities.forEach(function (activity){
+                        let activityLI = document.createElement("li");
+                        activityLI.innerText = activity;
+                        activityUL.appendChild(activityLI);
+                    })
+
+                    projectDiv.appendChild(categoryDiv);
+                    projectDiv.appendChild(projectTitle);
+                    projectDiv.appendChild(descriptionPara);
+                    projectDiv.appendChild(activityUL);
+
+                    projectListDiv.appendChild(projectDiv);
+                })
+            }
+        </script>
+
         <div class="search"><!-- Search -->
             <form action="">
                 <input type="text" name="search" id="search" placeholder="Search Here">
@@ -155,8 +219,6 @@
                 <span class="material-icons">more_vert</span>
             </div>
         </div> <!-- Project 6 End-->
-
-</div><!-- Project List End -->
 
 </section><!-- Main End-->
 
