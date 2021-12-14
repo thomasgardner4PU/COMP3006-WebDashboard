@@ -1,0 +1,50 @@
+<h2>Home</h2>
+
+<div id="users">
+
+</div>
+
+<script>
+    let recievedUsers = false;
+
+    fetch("http://127.0.0.1:8000/users").then(function (headers) {
+        console.log(headers);
+        if (headers.status != 200){
+            console.log("did not receive 200 response");
+            return
+        }
+
+        recievedUsers = true;
+        return headers.json()
+    }).then(function (body){
+        if (recievedUsers == false) return
+        populateUsers(body);
+    }).catch(function (error){
+        if (recievedUsers == false) return
+        console.log("error");
+        console.log(error);
+    })
+
+    function populateUsers(users){
+
+        let userDiv = document.getElementById("users");
+        users.forEach(function (user){
+            console.log(user)
+            let idPara = document.createElement("p");
+            let namePara = document.createElement("p");
+            let agePara = document.createElement("p")
+            let emailPara = document.createElement("p");
+
+            idPara.innerText = user.id;
+            namePara.innerText = user.name;
+            agePara.innerText = user.age;
+            emailPara.innerText = user.email;
+
+            userDiv.appendChild(idPara);
+            userDiv.appendChild(namePara);
+            userDiv.appendChild(agePara);
+            userDiv.appendChild(emailPara);
+        })
+    }
+
+</script>

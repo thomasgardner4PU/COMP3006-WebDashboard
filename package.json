@@ -1,0 +1,24 @@
+{
+  "name": "comp3006-webdashboard",
+  "version": "1.0.0",
+  "description": "The web application is intended to be used by corporate users and shall have a single pane view, with key metrics that will provide the user with at-a-glance information based on their personal projects using analysis and decision making while keeping information up to date. There are also key performance indicators and other metrics in the form of graphs and charts with the option to further drill down the data. This type of dashboard is to serve as a ‘hub’ for users to centrally manage and view their data. The data can change in real time meaning in the underlying data or values is reflected in the dashboard immediately.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasgardner4PU/COMP3006-WebDashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasgardner4PU/COMP3006-WebDashboard/issues"
+  },
+  "homepage": "https://github.com/thomasgardner4PU/COMP3006-WebDashboard#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2"
+  }
+}
