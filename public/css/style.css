@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    margin: 0px;
+    background-color: aliceblue;
+}
+
+.dashboard{
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+
+/* ======================================
+Navigation
+=========================================
+ */
+
+.dashboard .navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+.dashboard .navigation img.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.dashboard .navigation img.user{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.dashboard .navigation div .material-icons{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 30px;
+    color: #727272;
+}
+
+.dashboard .navigation div{
+    margin-top: 10px;
+}

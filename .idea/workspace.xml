@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da06e4fc-411b-40ae-a0cf-1feb6ec502ba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="da06e4fc-411b-40ae-a0cf-1feb6ec502ba" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +11,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -33,12 +31,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Users\Thomas\Documents\Github\COMP3006-WebDashboard\img" />
+      <recent name="D:\Users\Thomas\Documents\Github\COMP3006-WebDashboard\public" />
       <recent name="D:\Users\Thomas\Documents\Github\COMP3006-WebDashboard" />
+      <recent name="D:\Users\Thomas\Documents\Github\COMP3006-WebDashboard\views" />
+      <recent name="D:\Users\Thomas\Documents\Github\COMP3006-WebDashboard\img" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -51,6 +52,7 @@
       <updated>1639407209549</updated>
       <workItem from="1639407211628" duration="5943000" />
       <workItem from="1639491673883" duration="9579000" />
+      <workItem from="1639666551879" duration="6152000" />
     </task>
     <servers />
   </component>
@@ -67,5 +69,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
