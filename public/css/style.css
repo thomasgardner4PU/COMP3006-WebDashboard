@@ -190,3 +190,69 @@ Main dashboard
 .category_color4 {
     background-color: lightcyan; !important;
 }
+
+/* ======================================
+Secondary statistics
+=========================================
+ */
+
+/* Chart */
+.dashboard .secondary .chart .complete{
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.dashboard .secondary .chart .complete h3{
+line-height: 0px;
+}
+
+.dashboard .secondary .chart .complete p{
+    color: #727272;
+}
+
+.dashboard .secondary .chart {
+    background-color: #fff;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Recent Projects */
+
+.dashboard .secondary .recent_projects .listing h2 {
+    line-height: 0px;
+}
+
+.dashboard .secondary .recent_projects .listing p {
+    color: #727272;
+}
+
+.dashboard .secondary .recent_projects .listing {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard .secondary .recent_projects {
+    background-color: #fff;
+    padding: 15px 15px 15px 60px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.dashboard .secondary .recent_projects .category {
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    position: absolute;
+    left: 10px;
+    margin: 20px;
+}
+
+/* ======================================
+media query 768px
+=========================================
+ */
+
+@media only screen and (min-width: 768px){
+    
+}
