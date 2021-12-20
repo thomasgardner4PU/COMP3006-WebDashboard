@@ -254,5 +254,69 @@ media query 768px
  */
 
 @media only screen and (min-width: 768px){
-    
+    section.main .project_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    section.main .project_list .project {
+        width: 47%;
+    }
+    section.main .project_list .project span{
+        margin-top: 15px;
+    }
+
+    /* Recent project */
+    section.secondary{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        background-color: #fff;
+        padding-top: 70px;
+    }
+
+    section.secondary .chart {
+        width: 40%;
+    }
+    section.secondary .recent_projects {
+        width: 55%;
+    }
+
+    section.secondary .recent_projects .listing span{
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .dashboard .navigation,
+    .dashboard .navvigation div span,
+    section.seconadry {
+      display: block;
+    }
+
+    .dashboard .navigation {
+        width: 60px;
+        position: fixed;
+        z-index: 10;
+    }
+
+    section.main {
+        width: 65%;
+        margin-left: 90px;
+        margin-right: 20px;
+    }
+
+    section.secondary{
+        min-width: 10%;
+        padding-top: 0px;
+        position: fixed;
+        top: 10px;
+        right: 0px;
+        background-color: transparent;
+    }
+    section.secondary .chart,
+    section.secondary .recent_projects{
+        width: 100%;
+        border-radius: 10px;
+    }
 }
