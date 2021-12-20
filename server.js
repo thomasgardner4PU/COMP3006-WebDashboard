@@ -1,6 +1,9 @@
+// if (process.env.NODE_ENV !== 'production'){
+//     require('dotenv').load()
+// }
+
 let express = require("express")
 const {engine} = require("express-handlebars");
-let mongoose = require('mongoose');
 require('dotenv/config');
 
 
@@ -12,8 +15,6 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(express.static('public'))
-
-app.use('/', indexRouter)
 
 //routes
 
@@ -83,10 +84,17 @@ app.use(express.static(path.join(__dirname, "./public")));
 
 // connection to database
 
+let mongoose = require('mongoose');
 mongoose.connect(
     process.env.DB_CONNECTION,
     { useNewUrlParser: true },
-    () => console.log('connected to db'))
+    () => console.log('connected to db!'))
+
+let db = mongoose.connection
+db.on('error', error => console.log(error))
+db.once('open', error => console.log('connected to mongoose'))
+
+app.use('/', indexRouter)
 
 app.listen( process.env.PORT || 8000)
 
