@@ -1,83 +1,24 @@
-// if (process.env.NODE_ENV !== 'production'){
-//     require('dotenv').load()
-// }
-
 let express = require("express")
 const {engine} = require("express-handlebars");
-require('dotenv/config');
+let dotenv = require('dotenv');
 
+
+//Routes
 
 let indexRouter = require('./routes/index')
+let ProfileRouter = require('./routes/profile')
+let usersRouter = require('./routes/users')
+let projectsRouter = require('./routes/projects')
 
 let app = express()
+
+dotenv.config({path:'.env'})
+let PORT = process.env.PORT || 8080
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(express.static('public'))
-
-//routes
-
-// app.get('/', function (req, res) {
-//     res.render('index');
-// })
-
-app.get('/profile', function (req, res){
-    res.render('profile');
-})
-
-app.get('/api/users', function (req, res) {
-    res.send([
-        {
-            id: 1,
-            name: "Thomas",
-            age: 25,
-            email: "thomasgardner47@gmail.com"
-        },
-
-        {
-            id: 2,
-            name: "David",
-            age: 24,
-            email: "davidsemail@test.com"
-        },
-
-        {
-            id: 3,
-            name: "Jacub",
-            age: 22,
-            email: "jacubemail@test.com"
-        }
-    ])
-})
-
-app.get('/api/projects', function (req, res){
-    res.send([
-        {
-            projectId: 1,
-            projectTitle: "COMP3005",
-            projectDescription: "hello world, I am a computer communicating with a human",
-            projectActivities: [
-                "Coming Soon",
-                "Book Cover"
-            ],
-        }
-    ])
-})
-
-// app.post('/api/projects', function (req, res){
-//     res.send([
-//         {
-//             projectId: 2,
-//             projectTitle: "COMP3008",
-//             projectDescription: "this is a test project",
-//             projectActivities: [
-//                 "Coming soon",
-//                 "Assignment Notes"
-//             ],
-//         }
-//     ])
-// })
 
 const path = require("path");
 app.use(express.static(path.join(__dirname, "./public")));
@@ -95,6 +36,9 @@ db.on('error', error => console.log(error))
 db.once('open', error => console.log('connected to mongoose'))
 
 app.use('/', indexRouter)
+app.use('/', ProfileRouter)
+app.use('/', usersRouter)
+app.use('/', projectsRouter)
 
-app.listen( process.env.PORT || 8000)
+app.listen(PORT,()=>{console.log(`Server is running on http://127.0.0.1:${PORT}`)})
 

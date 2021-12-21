@@ -27,7 +27,7 @@
 
                 let recievedProjects = false;
 
-                fetch("http://127.0.0.1:8000/api/projects").then(function (headers) {
+                fetch("http://127.0.0.1:8080/api/projects").then(function (headers) {
                     console.log(headers);
                     if (headers.status != 200){
                         console.log("did not receive 200 response");
