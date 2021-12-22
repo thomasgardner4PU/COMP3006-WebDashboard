@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/COMP3006-WebDashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/COMP3006-WebDashboard.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/samplecode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@sindresorhus/is/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@sindresorhus/is/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@szmarczak/http-timer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@szmarczak/http-timer/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@types/whatwg-url/dist/URL.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/whatwg-url/dist/URL.d.ts" afterDir="false" />
@@ -1023,7 +1023,7 @@
       <workItem from="1640005240423" duration="8993000" />
       <workItem from="1640018035299" duration="82000" />
       <workItem from="1640049854342" duration="1274000" />
-      <workItem from="1640116309975" duration="13758000" />
+      <workItem from="1640116309975" duration="14349000" />
     </task>
     <servers />
   </component>
