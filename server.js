@@ -36,12 +36,12 @@ let PORT = process.env.PORT || 8080
 let mongoose = require('mongoose');
 mongoose.connect(
     process.env.DB_CONNECTION,
-    { useNewUrlParser: true },
+    // { useNewUrlParser: true },
     () => console.log('connected to db!'))
 
-let db = mongoose.connection
-db.on('error', error => console.log(error))
-db.once('open', error => console.log('connected to mongoose'))
+// let db = mongoose.connection
+// db.on('error', error => console.log(error))
+// db.once('open', error => console.log('connected to mongoose'))
 
 
 // server listening port
