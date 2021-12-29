@@ -68,7 +68,7 @@
                     let projectDiv = document.createElement("div");
                     let categoryDiv = document.createElement("div");
                     let projectTitle = document.createElement("h2");
-                    let descriptionPara = document.createElement("p");
+                    let projectStatus = document.createElement("p");
                     let activityUL = document.createElement("ul");
 
                     projectDiv.classList.add("project");
@@ -76,7 +76,7 @@
                     activityUL.classList.add("activity");
 
                     projectTitle.innerText = project.projectTitle;
-                    descriptionPara.innerText = project.projectDescription;
+                    projectStatus.innerText = project.projectStatus;
 
                     project.projectActivities.forEach(function (activity){
                         let activityLI = document.createElement("li");
@@ -86,7 +86,7 @@
 
                     projectDiv.appendChild(categoryDiv);
                     projectDiv.appendChild(projectTitle);
-                    projectDiv.appendChild(descriptionPara);
+                    projectDiv.appendChild(projectStatus);
                     projectDiv.appendChild(activityUL);
 
                     projectListDiv.appendChild(projectDiv);
@@ -131,7 +131,6 @@
                 <h2>Project 1</h2>
                 <p>1 Hour ago</p>
                 <ul class="activity">
-
                     <li>ComingSoon Banner</li>
                     <li>Book Cover</li>
                 </ul>

@@ -35,7 +35,7 @@ window.onload = function() {
             if (title.includes(values)){
                 element.style.display = "block"
             }
-            else if (values !== 'RECENT' && status.includes(values)){
+            else if (values != 'RECENT' && status.includes(values)){
                 element.style.display = "block"
             }
             else if (values === 'RECENT' && recent.includes('HOUR') || recent.includes('DAY')){
