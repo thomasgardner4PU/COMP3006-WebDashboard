@@ -1,162 +1,142 @@
-* {
+*{
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
-
 body{
     margin: 0px;
     background-color: aliceblue;
 }
-
 .dashboard{
     padding: 0px 15px;
     margin: 0 auto;
 }
 
-/* ======================================
+/* ==========================
 Navigation
-=========================================
- */
-
-.dashboard .navigation {
+============================= */
+.dashboard .navigation{
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 10px;
-
 }
-
 .dashboard .navigation img.logo{
     width: 50px;
     height: 50px;
     border-radius: 10px;
 }
-
 .dashboard .navigation img.user{
     width: 50px;
     height: 50px;
     border-radius: 10px;
 }
-
-.dashboard .navigation div .material-icons{
+.dashboard .navigation div .material-icons-outlined{
     margin-left: 5px;
     margin-right: 5px;
     font-size: 30px;
     color: #727272;
 }
 
-.dashboard .navigation div{
-    margin-top: 10px;
-}
-
-/* ======================================
-Main dashboard
-=========================================
- */
-
+/* ==========================
+Main Dashboard
+============================= */
 /* Search */
-.dashboard .main .search form {
-    margin-top: 50px;
-    position:  relative;
+.dashboard .main .search form{
+    position: relative;
 }
-
-.dashboard .main .search input {
+.dashboard .main .search{
+    margin-top: 40px;
+}
+.dashboard .main .search form input{
     width: 100%;
     font-size: 16px;
     padding: 10px 10px 10px 60px;
     border: 1px solid #dadada;
-    background-color: rgba(0 0 0 / 0);
+    background-color: rgba( 0 0 0 / 0);
 }
-
 .dashboard .main .search form span{
     position: absolute;
     left: 15px;
     top: 10px;color: #727272;
 }
-
 .dashboard .main .search .notification{
     margin-top: 20px;
 }
-
-.dashboard .main .search .notification:nth-child(1){
+.dashboard .main .search .notification span:nth-child(1){
     margin-right: 15px;
+    position: relative;
+}
+.dashboard .main .search .notification span:nth-child(1)::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: sandybrown;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
 }
 
 /* My Project */
 .dashboard .main .title{
     margin-bottom: 30px;
 }
-
 .dashboard .main .title h1{
     font-size: 35px;
     line-height: 0px;
 }
-
-.dashboard .main .title form {
+.dashboard .main .title{
     margin-top: 40px;
 }
-
-.dashboard .main .title form label{
+.dashboard .main .title label{
     margin-right: 15px;
     color: #727272;
     font-size: 16px;
 }
-
-.dashboard .main .title form select {
+.dashboard .main .title select{
     border: none;
     font-size: 16px;
-    background-color: rgba(0 0 0 / 0);
+    background-color: rgba( 0 0 0 / 0);
 }
 
-/* Project list */
-
+/* Project List */
 .dashboard .main .project_list .project h2{
     font-size: 20px;
     line-height: 0;
 }
-
 .dashboard .main .project_list .project p{
     color: #727272;
-
 }
-
 .dashboard .main .project_list .project ul {
     list-style: none;
     position: relative;
     margin-left: 0px;
     padding-left: 0px;
 }
-
 .dashboard .main .project_list .project ul li {
     position: relative;
     color: #727272;
     margin-left: 15px;
 }
-
-.dashboard .main .project_list .project ul li::before{
+.dashboard .main .project_list .project ul li::before {
     content: "\268A";
     position: absolute;
     left: -15px;
     top: -5px;
 }
-
 .dashboard .main .project_list .project .meta img {
     width: 50px;
     height: 50px;
     border-radius: 40px;
     border: 4px solid aliceblue;
 }
-
 .dashboard .main .project_list .project .meta img.stack {
     margin-left: -20px;
 }
-
 .dashboard .main .project_list .project .meta {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
 }
-
 .dashboard .main .project_list .project {
     padding: 20px 20px 20px 60px;
     background-color: #fff;
@@ -165,7 +145,6 @@ Main dashboard
     border-radius: 10px;
     position: relative;
 }
-
 .dashboard .main .project_list .category {
     width: 30px;
     height: 50px;
@@ -174,43 +153,34 @@ Main dashboard
     position: absolute;
     left: 0;
 }
-
-.category_color1 {
+.category_color1{
     background-color: tan !important;
 }
-
-.category_color2 {
-    background-color: rebeccapurple; !important;
+.category_color2{
+    background-color: rebeccapurple !important;
+}
+.category_color3{
+    background-color: sandybrown !important;
+}
+.category_color4{
+    background-color: lightcyan !important;
 }
 
-.category_color3 {
-    background-color: sandybrown; !important;
-}
-
-.category_color4 {
-    background-color: lightcyan; !important;
-}
-
-/* ======================================
-Secondary statistics
-=========================================
- */
-
+/* ==========================
+Secondary Statics
+============================= */
 /* Chart */
 .dashboard .secondary .chart .complete{
     text-align: center;
     margin: 40px 0px;
 }
-
 .dashboard .secondary .chart .complete h3{
-line-height: 0px;
+    line-height: 0px;
 }
-
 .dashboard .secondary .chart .complete p{
     color: #727272;
 }
-
-.dashboard .secondary .chart {
+.dashboard .secondary .chart{
     background-color: #fff;
     padding: 15px;
     position: relative;
@@ -218,99 +188,105 @@ line-height: 0px;
 }
 
 /* Recent Projects */
-
-.dashboard .secondary .recent_projects .listing h2 {
+.dashboard .secondary .recent_projects .listing h2{
     line-height: 0px;
 }
-
-.dashboard .secondary .recent_projects .listing p {
+.dashboard .secondary .recent_projects .listing p{
     color: #727272;
 }
-
-.dashboard .secondary .recent_projects .listing {
+.dashboard .secondary .recent_projects .listing{
     display: flex;
     justify-content: space-between;
 }
-
-.dashboard .secondary .recent_projects {
+.dashboard .secondary .recent_projects{
     background-color: #fff;
     padding: 15px 15px 15px 60px;
     position: relative;
     margin-bottom: 30px;
 }
-
-.dashboard .secondary .recent_projects .category {
+.dashboard .secondary .recent_projects .category{
     width: 16px;
     height: 16px;
     border-radius: 16px;
     position: absolute;
     left: 10px;
-    margin: 20px;
+    margin-top: 20px;
 }
 
-/* ======================================
-media query 768px
-=========================================
- */
-
+/* ==========================
+Media Query 768xp
+============================= */
 @media only screen and (min-width: 768px){
-    section.main .project_list {
+    /* Dashboard Search */
+    .dashboard .main .search{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 70px;
+        margin-bottom: 50px;
+    }
+    .dashboard .main .search form{
+        margin-top: 10px;
+    }
+    section.main .project_list{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    section.main .project_list .project {
+    section.main .project_list .project{
         width: 47%;
     }
     section.main .project_list .project span{
         margin-top: 15px;
     }
 
-    /* Recent project */
-    section.secondary{
+    /* Recent Projects */
+    .dashboard .secondary .recent_projects .listing h2{
+        line-height: 0px;
+    }
+    .dashboard .secondary .recent_projects .listing p{
+        color: #727272;
+    }
+    .dashboard .secondary .recent_projects .listing{
         display: flex;
         justify-content: space-between;
-        flex-wrap: nowrap;
+    }
+    .dashboard .secondary .recent_projects{
         background-color: #fff;
-        padding-top: 70px;
+        padding: 15px 15px 15px 60px;
+        position: relative;
+        margin-bottom: 30px;
     }
-
-    section.secondary .chart {
-        width: 40%;
-    }
-    section.secondary .recent_projects {
-        width: 55%;
-    }
-
-    section.secondary .recent_projects .listing span{
-        margin-top: 15px;
+    .dashboard .secondary .recent_projects .category{
+        width: 16px;
+        height: 16px;
+        border-radius: 16px;
+        position: absolute;
+        left: 10px;
+        margin-top: 20px;
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px){
     .dashboard .navigation,
-    .dashboard .navvigation div span,
-    section.seconadry {
-      display: block;
+    .dashboard .navigation div span,
+    section.secondary{
+        display: block;
     }
-
-    .dashboard .navigation {
+    .dashboard .navigation{
         width: 60px;
         position: fixed;
         z-index: 10;
     }
-
-    section.main {
-        width: 65%;
+    section.main{
+        width: 60%;
         margin-left: 90px;
         margin-right: 20px;
     }
-
     section.secondary{
-        min-width: 10%;
+        width: 27%;
         padding-top: 0px;
         position: fixed;
-        top: 10px;
+        top: 20px;
         right: 0px;
         background-color: transparent;
     }
@@ -318,5 +294,26 @@ media query 768px
     section.secondary .recent_projects{
         width: 100%;
         border-radius: 10px;
+    }
+    /*.dashboard .navigation div{*/
+    /*    margin-top: 20vh;*/
+    /*    margin-bottom: 20vh;*/
+    /*}*/
+    .dashboard .navigation div span{
+        margin-top: 5vh;
+    }
+}
+
+@media only screen and (min-width: 1111px){
+    section.main .project_list .project{
+        width: 32%;
+    }
+    section.main{
+        width: 65%;
+    }
+}
+@media only screen and (min-width: 1500px){
+    section.secondary .recent_projects .listing:nth-child(4){
+        display: none;
     }
 }

@@ -5,7 +5,7 @@ let app = express()
 
 //load public
 const path = require("path");
-app.use(express.static(path.join(__dirname, "./public")));
+app.use("/public", express.static(path.join(__dirname, "public")));
 
 
 //Routes
@@ -24,7 +24,6 @@ app.set('view engine', 'handlebars');
 app.engine('handlebars', engine());
 app.set('views', './views');
 app.use(express.static('public'))
-// app.set("views", path.resolve(__dirname, "views"))
 
 
 // dotenv security for DB connection
@@ -36,12 +35,8 @@ let PORT = process.env.PORT || 8080
 let mongoose = require('mongoose');
 mongoose.connect(
     process.env.DB_CONNECTION,
-    { useNewUrlParser: true },
+    // { useNewUrlParser: true },
     () => console.log('connected to db!'))
-
-let db = mongoose.connection
-db.on('error', error => console.log(error))
-db.once('open', error => console.log('connected to mongoose'))
 
 
 // server listening port

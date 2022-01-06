@@ -1,16 +1,26 @@
 <div class="dashboard"><!-- Dashboard -->
     <section class="navigation"><!-- Navigation -->
         <img src="/img/logo-thumbnail.png" alt="COMP3006 Logo" class="logo">
+
+        <div class="buttons"> <!-- CRUD Buttons -->
+            <button id="Create" onclick="retrieveProjects()">Create Project&excl;</button>
+
+            <button id="Read"></button>
+
+            <button id="Update"></button>
+
+            <button id="Delete"></button>
+        </div><!-- CRUD Buttons end-->
         <div>
-            <span class="material-icons"> dashboard_customize
+            <span class="material-icons-outlined">dashboard_customize
             </span>
-            <span class="material-icons">trending_up
+            <span class="material-icons-outlined">trending_up
             </span>
-            <span class="material-icons">people_alt
+            <span class="material-icons-outlined">people_alt
             </span>
-            <span class="material-icons">insert_invitation
+            <span class="material-icons-outlined">insert_invitation
             </span>
-            <span class="material-icons">settings
+            <span class="material-icons-outlined">settings
             </span>
         </div>
 
@@ -20,7 +30,7 @@
 
     <section class="main"><!-- Main -->
 
-        <button id="testButton" onclick="retrieveProjects()">Create Project&excl;</button>
+
         <script>
 
             function retrieveProjects() {
@@ -58,7 +68,7 @@
                     let projectDiv = document.createElement("div");
                     let categoryDiv = document.createElement("div");
                     let projectTitle = document.createElement("h2");
-                    let descriptionPara = document.createElement("p");
+                    let projectStatus = document.createElement("p");
                     let activityUL = document.createElement("ul");
 
                     projectDiv.classList.add("project");
@@ -66,7 +76,7 @@
                     activityUL.classList.add("activity");
 
                     projectTitle.innerText = project.projectTitle;
-                    descriptionPara.innerText = project.projectDescription;
+                    projectStatus.innerText = project.projectStatus;
 
                     project.projectActivities.forEach(function (activity){
                         let activityLI = document.createElement("li");
@@ -76,7 +86,7 @@
 
                     projectDiv.appendChild(categoryDiv);
                     projectDiv.appendChild(projectTitle);
-                    projectDiv.appendChild(descriptionPara);
+                    projectDiv.appendChild(projectStatus);
                     projectDiv.appendChild(activityUL);
 
                     projectListDiv.appendChild(projectDiv);
@@ -86,38 +96,40 @@
 
         <div class="search"><!-- Search -->
             <form action="">
-                <input type="text" name="search" id="search" placeholder="Search Here">
-                <span class="material-icons">
+                <input type="text" name="search" id="searchProject"
+                       placeholder="Search Here">
+                <span class="material-icons-outlined">
                     search</span>
             </form>
             <div class="notification">
-                <span class="material-icons">
+                <span class="material-icons-outlined">
                     notifications</span>
-                <span class="material-icons">
+                <span class="material-icons-outlined">
                     edit</span>
             </div>
         </div><!-- Search End-->
 
         <div class="title">
-            <h1>My project</h1>
-            <form action="#">
-                <label for="projects">Sort By</label>
-                <select name="projects" id="projects">
-                    <option value="recent">Recent</option>
-                    <option value="finished">Finished Projects</option>
-                    <option value="ongoing">Ongoing Projects</option>
-                    <option value="stalled">Stalled Projects</option>
-                </select>
-            </form>
+            <h1>My projects</h1>
+
+            <label for="projects">Sort By</label>
+            <select name="projects" id="projectFilter">
+                <option value="">...</option>
+                <option value="recent">Recent Projects</option>
+                <option value="finished">Finished Projects</option>
+                <option value="ongoing">Ongoing Projects</option>
+                <option value="stalled">Stalled Projects</option>
+            </select>
+
         </div>
 
         <div class="project_list"><!-- Project List -->
 
-            <div class="project"><!-- Project1 -->
+            <div class="project" data-status="finished" title="Finished Projects"><!-- Project1 -->
                 <div class="category category_color1">
                 </div>
                 <h2>Project 1</h2>
-                <p>Active Recently</p>
+                <p>1 Hour ago</p>
                 <ul class="activity">
                     <li>ComingSoon Banner</li>
                     <li>Book Cover</li>
@@ -134,7 +146,7 @@
             </div> <!-- Project1 End-->
 
 
-        <div class="project"><!-- Project2 -->
+        <div class="project"data-status="ongoing" title="Ongoing Projects"><!-- Project2 -->
             <div class="category category_color2">
             </div>
             <h2>Project 2</h2>
@@ -152,11 +164,11 @@
             </div>
         </div> <!-- Project2 End-->
 
-        <div class="project"><!-- Project3 -->
+        <div class="project"data-status="stalled" title="Stalled Projects"><!-- Project3 -->
             <div class="category category_color3">
             </div>
             <h2>Project 3</h2>
-            <p>Active Recently</p>
+            <p>1 Day ago</p>
             <ul class="activity">
                 <li>Fixd layout page on</li>
             </ul>
@@ -169,7 +181,7 @@
             </div>
         </div> <!-- Project3 End-->
 
-        <div class="project"><!-- Project 4 -->
+        <div class="project" data-status="recent" title="Recent Projects"><!-- Project 4 -->
             <div class="category category_color4">
             </div>
             <h2>Project 4</h2>
@@ -182,11 +194,11 @@
                 <div class="contributors">
                     <img src="img/avatar.png" alt="Avatar" class="avatar">
                 </div>
-                <span class="material-icons">more_vert</span>
+                <span class="material-icons-outlined">more_vert</span>
             </div>
         </div> <!-- Project 4 End-->
 
-        <div class="project"><!-- Project 5 -->
+        <div class="project" data-status="ongoing" title="Ongoing Projects"><!-- Project 5 -->
             <div class="category category_color1">
             </div>
             <h2>Project 5</h2>
@@ -200,17 +212,17 @@
                     <img src="img/avatar.png" alt="Avatar" class="avatar">
                     <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
                 </div>
-                <span class="material-icons">more_vert</span>
+                <span class="material-icons-outlined">more_vert</span>
             </div>
         </div> <!-- Project 5 End-->
 
-        <div class="project"><!-- Project 6 -->
+        <div class="project"data-status="stalled" title="Stalled Projects"><!-- Project 6 -->
             <div class="category category_color3">
             </div>
             <h2>Project 6</h2>
             <p>Active Recently</p>
             <ul class="activity">
-                <li>Fixd layout page on</li>
+                <li>Fixed layout page on</li>
             </ul>
 
             <div class="meta">
@@ -219,7 +231,7 @@
                     <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
                     <img src="img/avatar.png" alt="Avatar" class="avatar">
                 </div>
-                <span class="material-icons">more_vert</span>
+                <span class="material-icons-outlined">more_vert</span>
             </div>
         </div> <!-- Project 6 End-->
     </div><!-- Project List End -->
@@ -227,82 +239,54 @@
 
 </section><!-- Main End-->
 
-<section class="secondary"><!-- Secondary -->
+    <section class="secondary"><!-- Secondary -->
+        <div class="chart">
+            <h2>Total Project</h2>
+            <canvas id="myChart" width="400" height="400"></canvas>
 
-    <div class="chart">
-        <h2>Total Project</h2>
-        <canvas id="myChart" width="400" height="400"></canvas>
-        <div class="complete">
-            <h3>Completed Projects</h3>
-            <p>Number of open projects</p>
-        </div>
-    </div>
-    <div class="recent_projects"><!-- Recent Project -->
-        <div class="listing">
-            <div class="title">
-                <div class="category category_color1"></div>
-                <h2>layout design</h2>
-                <p>by Thomas Gardner</p>
-                <span class="material-icons">more_vert
-                    </span>
+            <div class="complete">
+                <h3>3 Completed</h3>
+                <p>from 5 projects</p>
             </div>
         </div>
 
-        <div class="listing">
-            <div class="title">
-                <div class="category category_color2"></div>
-                <h2>Photoshop project</h2>
-                <p>by David</p>
-                <span class="material-icons">more_vert
-                    </span>
-            </div>
-        </div>
 
-        <div class="listing">
-            <div class="title">
-                <div class="category category_color3"></div>
-                <h2>DevOps Project Notes</h2>
-                <p>by Jacub</p>
-                <span class="material-icons">more_vert
-                    </span>
+        <div class="recent_projects"><!-- Recent Project -->
+            <div class="listing">
+                <div class="title">
+                    <div class="category category_color1"></div>
+                    <h2>Layouting</h2>
+                    <p>By Thomas Gardner</p>
+                </div>
+                <span class="material-icons-outlined">more_vert</span>
             </div>
-        </div>
-
-        <div class="listing">
-            <div class="title">
-                <div class="category category_color4"></div>
-                <h2>VR Development</h2>
-                <p>By James Hayter</p>
-                <span class="material-icons">more_vert
-                    </span>
+            <div class="listing">
+                <div class="title">
+                    <div class="category category_color2"></div>
+                    <h2>Photoshoot</h2>
+                    <p>by Test User 2</p>
+                </div>
+                <span class="material-icons-outlined">more_vert</span>
             </div>
-        </div>
-
-    </div><!-- Recent Project End-->
+            <div class="listing">
+                <div class="title">
+                    <div class="category category_color3"></div>
+                    <h2>Branding</h2>
+                    <p>by Test User 3</p>
+                </div>
+                <span class="material-icons-outlined">more_vert</span>
+            </div>
+            <div class="listing">
+                <div class="title">
+                    <div class="category category_color3"></div>
+                    <h2>Branding</h2>
+                    <p>by Test User 4</p>
+                </div>
+                <span class="material-icons-outlined">more_vert</span>
+            </div>
+        </div><!-- Recent Project End -->
 
 </section><!-- Secondary end-->
 
 </div> <!-- Dashboard End-->
-<script>
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: [
-                'Completed',
-                'Ongoing',
-                'Stalled'
-            ],
-            datasets: [{
-                label: 'My First Dataset',
-                data: [300, 50, 100],
-                backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
-                ],
-                hoverOffset: 4
-            }]
-        },
-    });
-</script>
+<script src="../public/script.js"></script>

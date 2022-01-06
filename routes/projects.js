@@ -8,7 +8,7 @@ router.get('/api/projects', function (req, res){
         {
             projectId: 1,
             projectTitle: "COMP3005",
-            projectDescription: "hello world, I am a computer communicating with a human",
+            projectStatus: "1 Day ago",
             projectActivities: [
                 "Coming Soon",
                 "Book Cover"
