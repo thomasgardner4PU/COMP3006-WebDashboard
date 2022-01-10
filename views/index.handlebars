@@ -5,11 +5,9 @@
         <div class="buttons"> <!-- CRUD Buttons -->
             <button id="Create" onclick="retrieveProjects()">Create Project&excl;</button>
 
-            <button id="Read"></button>
+            <button id="Update">Update Project</button>
 
-            <button id="Update"></button>
-
-            <button id="Delete"></button>
+            <button id="Delete">Delete Project</button>
         </div><!-- CRUD Buttons end-->
         <div>
             <span class="material-icons-outlined">dashboard_customize
@@ -33,7 +31,7 @@
 
         <script>
 
-            function retrieveProjects() {
+            function retrieveProjects() { // to fetch json data from API
 
                 let recievedProjects = false;
 
