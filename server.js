@@ -1,6 +1,8 @@
 let express = require("express")
 const {engine} = require("express-handlebars");
 let dotenv = require('dotenv');
+const connectionStr = "mongodb://localhost:27017/comp3006"
+const{MongoClient} = require("mongodb");
 let app = express()
 
 //load public
@@ -34,7 +36,7 @@ let PORT = process.env.PORT || 8080
 //connection to database
 let mongoose = require('mongoose');
 mongoose.connect(
-    process.env.DB_CONNECTION,
+    connectionStr,
     // { useNewUrlParser: true },
     () => console.log('connected to db!'))
 
