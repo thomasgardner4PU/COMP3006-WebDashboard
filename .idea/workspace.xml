@@ -20,11 +20,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/views/index.handlebars" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/public/css/icons.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/views/layouts/main.handlebars" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/public/css/style.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/css/icons.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/views/index.handlebars" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/css/style.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/server.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="22EeX1hrSqw3MtTnrpOgxjjICXp" />
