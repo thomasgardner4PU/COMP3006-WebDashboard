@@ -2,40 +2,25 @@ let express = require('express')
 const mongoose = require("mongoose");
 let router = express.Router();
 
+
+// create data schema
+let projectsSchema = new mongoose.Schema({
+    _id: false,
+    Title: {
+        type: String,
+        required: true
+    },
+    projectFname: {
+        type: String,
+        required: true,
+        unique: true
+    }
+})
+
+let projects = mongoose.model("projects", projectsSchema);
+
+
 //api call goes here
-
-// create a data schema
-// const projectSchema = {
-//     projectId: Int32,
-//     projectTitle: String,
-//     projectStatus: String,
-//     projectUserfname: String,
-//     projectUserlname: String,
-//     projectActivities: [
-//         String,
-//         String
-//     ]
-// }
-//
-// const project = mongoose.model("project", projectSchema);
-//
-// router.get("/api/projects", function (req, res){
-//     res.sendFile(__dirname + "/index");
-// })
-//
-// router.post("/api/projects", function (req, res){
-//     let newProject = new project({
-//         projectId: req.body.projectId,
-//         projectTitle: req.body.projectTitle,
-//         projectStatus: req.body.projectStatus,
-//         projectUserfname: req.body.projectUserfname,
-//         projectUserlname: req.body.projectUserlname,
-//         projectActivities: req.body.projectActivities
-//     })
-//     newProject.save();
-// })
-
-
 // router.get('/api/projects', function (req, res){
 //     res.send([
 //         {
