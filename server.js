@@ -1,44 +1,50 @@
 let express = require("express")
-const {engine} = require("express-handlebars");
+const mongoose = require('mongoose');
+let {engine} = require("express-handlebars");
 let dotenv = require('dotenv');
-const connectionStr = "mongodb://localhost:27017/comp3006"
-const{MongoClient} = require("mongodb");
+let WebSocket = require("ws");
+let morgan = require('morgan')
+let bodyparser = require('body-parser');
+
+let connectDB = require('./connection');
+
 let app = express()
 
 //load public
 const path = require("path");
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-
 //Routes
-let indexRouter = require('./routes')
-let ProfileRouter = require('./routes/profile')
-let usersRouter = require('./routes/users')
-let projectsRouter = require('./routes/projects')
+let indexRouter = require('./server/routes')
+let ProfileRouter = require('./server/routes/profile')
+let usersRouter = require('./server/routes/users')
+let projectsRouter = require('./server/routes/projects')
 app.use('/', indexRouter)
 app.use('/', ProfileRouter)
 app.use('/', usersRouter)
 app.use('/', projectsRouter)
 
 
-// set view engine
-app.set('view engine', 'handlebars');
-app.engine('handlebars', engine());
-app.set('views', './views');
-app.use(express.static('public'))
-
-
 // dotenv security for DB connection
 dotenv.config({path:'.env'})
 let PORT = process.env.PORT || 8080
 
+//log requests
+app.use(morgan('tiny'));
 
-//connection to database
-let mongoose = require('mongoose');
-mongoose.connect(
-    connectionStr,
-    // { useNewUrlParser: true },
-    () => console.log('connected to db!'))
+// parse request to body-parser
+app.use(bodyparser.urlencoded({ extended : true }))
+
+// set view engine
+app.set('view engine', 'handlebars');
+app.engine('handlebars', engine());
+app.set('views', './views');
+// load assets
+app.use(express.static('public'))
+
+
+// mongoDB connection
+connectDB();
 
 
 // server listening port

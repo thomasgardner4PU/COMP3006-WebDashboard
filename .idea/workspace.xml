@@ -22,11 +22,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/views/layouts/main.handlebars" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/public/css/icons.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/views/index.handlebars" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/css/icons.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/views/layouts/main.handlebars" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/public/css/style.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/server.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="22EeX1hrSqw3MtTnrpOgxjjICXp" />
@@ -47,11 +47,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Thomas\Documents\Github\COMP3006-WebDashboard\server" />
       <recent name="C:\Users\PC03\Documents\GitHub\COMP3006-WebDashboard\public" />
       <recent name="C:\Users\PC03\Documents\GitHub\COMP3006-WebDashboard" />
       <recent name="C:\Users\PC03\Documents\GitHub\COMP3006-WebDashboard\views\layouts" />
       <recent name="C:\Users\PC03\Documents\GitHub\COMP3006-WebDashboard\views" />
-      <recent name="D:\Users\Thomas\Documents\Github\COMP3006-WebDashboard" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -52,4 +52,14 @@ window.onload = function() {
     projectFilter.addEventListener('input', (e) =>{
         displayProject(e.target.value.toUpperCase())
     })
+
+    // CRUD button functions
+
+    document.getElementById('Create').addEventListener('click', function (){
+       document.querySelector('.bg-model').style.display = 'flex';
+    });
+
+    document.querySelector('.close').addEventListener('click', function (){
+       document.querySelector('.bg-model').style.display = 'none';
+    });
 }
