@@ -1,52 +1,28 @@
-let express = require('express')
+let express = require('express');
 const mongoose = require("mongoose");
 let router = express.Router();
+let projectModel = require('../model/schema');
 
-
-// create data schema
-let projectsSchema = new mongoose.Schema({
-    _id: false,
-    Title: {
-        type: String,
-        required: true
-    },
-    projectFname: {
-        type: String,
-        required: true,
-        unique: true
-    }
+// POST method route
+router.post('/newproject', function (req, res) {
+    res.send('sending information back')
+    console.log('information recieved')
+    let newProject = new projectModel({
+        projectTitle: req.body.title,
+        projectFname: req.body.firstname,
+        projectLname: req.body.lastname,
+        projectDescription: req.body.description
+    })
+    newProject.save();
 })
 
-let projects = mongoose.model("projects", projectsSchema);
 
 
-//api call goes here
-// router.get('/api/projects', function (req, res){
-//     res.send([
-//         {
-//             projectId: 1,
-//             projectTitle: "COMP3005",
-//             projectStatus: "1 Day ago",
-//             projectActivities: [
-//                 "Coming Soon",
-//                 "Book Cover"
-//             ],
-//         }
-//     ])
-// })
 
-// app.post('/api/projects', function (req, res){
-//     res.send([
-//         {
-//             projectId: 2,
-//             projectTitle: "COMP3008",
-//             projectDescription: "this is a test project",
-//             projectActivities: [
-//                 "Coming soon",
-//                 "Assignment Notes"
-//             ],
-//         }
-//     ])
-// })
+// test api call goes here
+router.get('/api/projects', async function (req, res){
+    const projects = await projectModel.find();
+    res.send(projects);
+})
 
 module.exports = router

@@ -1,14 +1,16 @@
-let express = require("express")
+let express = require("express");
 const mongoose = require('mongoose');
 let {engine} = require("express-handlebars");
 let dotenv = require('dotenv');
 let WebSocket = require("ws");
 let morgan = require('morgan')
 let bodyparser = require('body-parser');
-
 let connectDB = require('./connection');
+let projectSchema = require('./server/model/schema')
 
 let app = express()
+
+app.use(express.json());
 
 //load public
 const path = require("path");
@@ -29,8 +31,11 @@ app.use('/', projectsRouter)
 dotenv.config({path:'.env'})
 let PORT = process.env.PORT || 8080
 
-//log requests
-app.use(morgan('tiny'));
+// mongoDB connection
+connectDB();
+
+// //log requests
+// app.use(morgan('tiny'));
 
 // parse request to body-parser
 app.use(bodyparser.urlencoded({ extended : true }))
@@ -41,10 +46,6 @@ app.engine('handlebars', engine());
 app.set('views', './views');
 // load assets
 app.use(express.static('public'))
-
-
-// mongoDB connection
-connectDB();
 
 
 // server listening port

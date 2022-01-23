@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 //connection to database
 let connectDB = async () => {
     try {
