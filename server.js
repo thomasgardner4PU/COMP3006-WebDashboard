@@ -1,11 +1,12 @@
 let express = require("express");
-const mongoose = require('mongoose');
 let {engine} = require("express-handlebars");
 let dotenv = require('dotenv');
 let WebSocket = require("ws");
-let morgan = require('morgan')
 let bodyparser = require('body-parser');
-let connectDB = require('./connection');
+const path = require("path");
+
+
+let connectDB = require('./server/database/connection');
 let projectSchema = require('./server/model/schema')
 
 let app = express()
@@ -13,17 +14,14 @@ let app = express()
 app.use(express.json());
 
 //load public
-const path = require("path");
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 //Routes
 let indexRouter = require('./server/routes')
 let ProfileRouter = require('./server/routes/profile')
-let usersRouter = require('./server/routes/users')
 let projectsRouter = require('./server/routes/projects')
 app.use('/', indexRouter)
 app.use('/', ProfileRouter)
-app.use('/', usersRouter)
 app.use('/', projectsRouter)
 
 
@@ -33,9 +31,6 @@ let PORT = process.env.PORT || 8080
 
 // mongoDB connection
 connectDB();
-
-// //log requests
-// app.use(morgan('tiny'));
 
 // parse request to body-parser
 app.use(bodyparser.urlencoded({ extended : true }))
